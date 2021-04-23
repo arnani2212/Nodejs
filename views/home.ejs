@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ID
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif
+        }
+        
+        .mySlides {
+            display: none
+        }
+        
+        .main-todo-input {
+            background: #fff;
+            padding: 0 120px 0 0;
+            border-radius: 1px;
+            margin-top: 200px;
+            box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3)
+        }
+        
+        .fl-wrap {
+            float: left;
+            width: 100%;
+            position: relative
+        }
+        
+        .main-todo-input:before {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            width: 50px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.41);
+            left: 50%;
+            margin-left: -25px
+        }
+        
+        .main-todo-input-item {
+            float: left;
+            width: 100%;
+            box-sizing: border-box;
+            border-right: 1px solid #eee;
+            height: 50px;
+            position: relative
+        }
+        
+        .main-todo-input-item input:first-child {
+            border-radius: 100%
+        }
+        
+        .main-todo-input-item input {
+            float: left;
+            border: none;
+            width: 100%;
+            height: 50px;
+            padding-left: 20px
+        }
+        
+        .main-search-button {
+            background: #4DB7FE
+        }
+        
+        .main-search-button {
+            position: absolute;
+            right: 0px;
+            height: 50px;
+            width: 120px;
+            color: #fff;
+            top: 0;
+            border: none;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            cursor: pointer
+        }
+        
+        .main-todo-input-wrap {
+            max-width: 500px;
+            margin: 20px auto;
+            position: relative
+        }
+        
+         :focus {
+            outline: 0
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .main-todo-input {
+                background: rgba(255, 255, 255, 0.2);
+                padding: 14px 20px 10px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.0)
+            }
+            .main-todo-input-item {
+                width: 100%;
+                border: 1px solid #eee;
+                height: 50px;
+                border: none;
+                margin-bottom: 10px
+            }
+            .main-todo-input-item input {
+                border-radius: 6px !important;
+                background: #fff
+            }
+            .main-search-button {
+                position: relative;
+                float: left;
+                width: 100%;
+                border-radius: 6px
+            }
+        }
+        
+        .remove {
+            float: right;
+            color: #757575 !important;
+            font-size: 14px
+        }
+        
+        #list-items {
+            padding-left: 20px;
+            padding-top: 15px
+        }
+        
+        ul {
+            padding: 0;
+            text-align: left;
+            list-style: none
+        }
+        
+        .todo-text {
+            color: #757575;
+            margin-left: 10px
+        }
+        
+        #todo-list-item {
+            color: black;
+        }
+        
+        .strike {
+            color: blue
+        }
+        
+        .todo-listing {
+            padding: 0px 29px 0 0;
+            margin-top: 54px !important
+        }
+    </style>
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">
+                Home
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+
+
+
+
+        <!-- The Band Section -->
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+            <h1 class="w3-wide" style="size: 100px;">TO DO LIST</h1>
+            <p>
+                Welcome,
+                <%-accres.username%>
+
+            </p>
+        </div>
+
+        <!-- The Tour Section -->
+        <div class="w3-black" id="tour">
+            <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+                <script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-todo-input-wrap">
+                            <div class="main-todo-input fl-wrap">
+                                <form method="POST" action="/tasks/add/<%-accres.code%>">
+                                    <div class="main-todo-input-item">
+                                        <input type="text" name="task" id="todo-list-item" placeholder="What will you do today?">
+                                    </div>
+                                    <button class="add-items main-search-button">ADD</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-todo-input-wrap">
+
+                            <div class="main-todo-input fl-wrap todo-listing">
+                                <ul id="list-items"></ul>
+
+                                <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                                    <% for (x=0,y=0;x<result.length; x++){%>
+                                        <div class="w3-third w3-margin-bottom">
+                                            <div class="w3-container w3-white">
+                                                <p><b>id:<%-result[x].id%></b></p>
+                                                <p><b><%-result[x].task%></b></p>
+                                                <p class="w3-opacity">created At :
+                                                    <%-result[x].createdAt%>
+                                                </p>
+                                                <p>Status:
+                                                    <%-result[x].status%>
+                                                </p>
+                                                <button class="w3-button w3-black w3-margin-bottom" data-toggle="modal" data-target="#myModal">Edit</button>
+                                                <a href="/tasks/delete/<%-result[x].id%>" style="color: white;"><button class="w3-button w3-black w3-margin-bottom" >Delete</button></a>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <form method="POST" action="/tasks/edit/<%-result[x].id%>">
+                                                            <div class="main-todo-input fl-wrap">
+
+                                                                <div class="main-todo-input-item"> <input type="text" name="task" id="todo-list-item" placeholder="Task"> </div>
+                                                                <div class="main-todo-input-item"> <input type="text" name="status" id="todo-list-item" placeholder="Status"> </div>
+                                                                <div class="main-todo-input-item"> <input type="datetime-local" name="completedAt" id="todo-list-item" placeholder="What will you do today?"> </div>
+
+                                                            </div>
+                                                            <button class="add-items main-search-button"><p><b>id: <%-result[x].id%></b></p></button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <% y++;}%>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Modal -->
+
+
+            <!-- End Page Content -->
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+            <p class="w3-medium">Arnan Planco </p>
+        </footer>
+
+
+</body>
+
+</html>
